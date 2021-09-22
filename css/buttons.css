@@ -1,0 +1,81 @@
+
+
+.container-buttons {
+    position: relative !important;
+    display: block;
+    min-width: 1903px;
+    min-height: 1000px;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    background: #fff;
+       
+}
+
+.buttons {
+    width: 900px;
+    height: 300px;
+    margin: auto;
+    top: 40%;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+}
+
+    .buttons button {
+        font-family: Impact;
+        position: relative;
+        width: 250px;
+        height: 80px;
+        border-radius: 10px;
+        border: unset;
+        background: unset;
+        outline: unset;
+        font-size: 40px;
+        color: white;
+        z-index: 0;
+    }
+
+        .buttons button::before {
+            content: '';
+            background: black;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+         
+        }
+
+button:hover {
+    animation: squish 0.5s;
+}
+
+    button:hover::before {
+        filter: url('#wave');
+        background: linear-gradient(to right, red, green, blue);
+    }
+
+.body-content {
+}
+
+@keyframes squish {
+    0% {
+        transform: scaleY(1);
+    }
+
+    60% {
+        transform: scaleY(1.5);
+    }
+
+
+    80% {
+        transform: scaleY(0.9);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}

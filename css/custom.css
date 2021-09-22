@@ -1,0 +1,22 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.container-content {
+    z-index: -1;
+    position: relative !important;
+    display: block;
+    width: calc(100% - (3vw + 3vh));
+    height: calc(100% - (3vw + 3vh))
+}
+
+
+#canvas1 {
+    border: 2px solid #fff;
+    top: 30px;
+    right: calc(50% - 844px);
+    width: calc(100% - (3vw + 3vh));
+    aspect-ratio:1688/478;
+}

@@ -4,9 +4,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="CSS/particleText.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script type="text/javascript" >
         fetch('/navigation.html').then(function (response) {
@@ -17,14 +16,6 @@
             // Convert the HTML string into a document object
             var parser = new DOMParser();
             document.querySelector('main').insertAdjacentHTML('afterbegin',html);
-            loadNavigation();
-
-        }).catch(function (err) {
-            // There was an error
-            console.warn('Something went wrong.', err);
-        });
-
-        function loadNavigation(){
             const mainjs = window.mainjs || {};
 
             mainjs.responsiveButton = ((document) => {
@@ -39,12 +30,12 @@
 
             });
             })(document)
-        }
-
+        }).catch(function (err) {
+            // There was an error
+            console.warn('Something went wrong.', err);
+        });
         </script>
-
 </head>
-<body>
 <sidebar id="side-nav">
     <div class="sidebar__content">
         <div class="sidebar__content--logo"><img src="/images/m.png" alt="logo"></div>
@@ -58,13 +49,18 @@
         </ul> 
     </div>
 </sidebar>
-<main>
+<body>
+    <main>
+        <div class="container-particleText">
 
 
-    <h1>New-solid</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem magnam fugit sint exercitationem commodi iste ipsum maxime. Et animi iste omnis quasi vel nulla, quisquam labore voluptas. Beatae, veritatis laboriosam!   </p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, in!</p>
-</main>
-<!-- <script src="js/main.js"></script> -->
+            <canvas id="canvas-container-particleText">
+            </canvas>
+        
+        
+        </div>
+    </main>
+    <script src="js/particleText.js"></script> 
 </body>
 </html>
+
